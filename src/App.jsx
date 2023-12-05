@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { Helmet } from 'react-helmet'
 import PersonList from './components/PersonList'
 import Search from './components/Search'
 import PersonForm from './components/PersonForm'
@@ -15,6 +14,8 @@ const App = () => {
   const [showFiltered, setFiltered] = useState('')
   const [notificationMessage, setNotificationMessage] = useState(null)
   const [errorOrSuccess, setErrorOrSuccess] = useState('')
+
+  const TITLE_OF_PAGE = 'Phonebook App'
 
 
   useEffect(() => {
@@ -159,10 +160,7 @@ const App = () => {
 // Lisätty notification container, jottei sivu hypi ylös-alas kun notification tulee ruudulle
   return (
     <div>
-      <Helmet>
-        Phonebook App
-      </Helmet>
-      <h2>Phonebook</h2>
+      <h2>Phonebook ?</h2>
       <div className='notification-container'>
       <Notification message={notificationMessage} error={errorOrSuccess}/>
       </div>
