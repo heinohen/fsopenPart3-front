@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet'
 import PersonList from './components/PersonList'
 import Search from './components/Search'
 import PersonForm from './components/PersonForm'
@@ -158,6 +159,9 @@ const App = () => {
 // Lisätty notification container, jottei sivu hypi ylös-alas kun notification tulee ruudulle
   return (
     <div>
+      <Helmet>
+        Phonebook App
+      </Helmet>
       <h2>Phonebook</h2>
       <div className='notification-container'>
       <Notification message={notificationMessage} error={errorOrSuccess}/>
