@@ -15,9 +15,6 @@ const App = () => {
   const [notificationMessage, setNotificationMessage] = useState(null)
   const [errorOrSuccess, setErrorOrSuccess] = useState('')
 
-  const TITLE_OF_PAGE = 'Phonebook App'
-
-
   useEffect(() => {
     personService
       .getAll()
@@ -100,6 +97,12 @@ const App = () => {
                     setErrorOrSuccess(null)
                 }, 5000)
             })
+// Olemattoman henkilön poistaminen tapahtuu siis metodilla filter,
+// joka muodostaa uuden taulukon, jonka sisällöksi tulee alkuperäisen taulukon sisällöstä ne alkiot,
+// joille parametrina oleva funktio palauttaa arvon true:
+            .catch(error => {
+              console.log(error.response.data)
+            })
       }
   }
 
@@ -160,7 +163,7 @@ const App = () => {
 // Lisätty notification container, jottei sivu hypi ylös-alas kun notification tulee ruudulle
   return (
     <div>
-      <h2>Phonebook ?</h2>
+      <h2>Phonebook</h2>
       <div className='notification-container'>
       <Notification message={notificationMessage} error={errorOrSuccess}/>
       </div>

@@ -35,10 +35,3 @@ const PersonForm = ( {submit, name, number, handleName, handleNumber }) => {
 }
 
 export default PersonForm
-/*
-<PersonForm submit =
-{addPerson} name = {newName}
-number = {newNumber}
-handleName = {handleNameChange}
-handleNumber = {handleNumberChange} />
-*/

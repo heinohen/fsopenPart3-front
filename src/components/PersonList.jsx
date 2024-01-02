@@ -25,7 +25,7 @@ const PersonList = ({ persons, showFiltered, deleteThisPerson }) => {
     const filteredPersons = persons.filter((person) =>
         person.name.toLowerCase()
         .includes(showFiltered.toLowerCase())
-    );
+    )
 
     return(
         <div>
