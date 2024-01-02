@@ -68,6 +68,17 @@ const App = () => {
                 setErrorOrSuccess(null)
             }, 5000)
           })
+// 3.20 updaten validator error
+          .catch(error => {
+            setNotificationMessage(
+              `Error ${error.response.data.error}`
+              )
+              setErrorOrSuccess(true)
+              setTimeout(() => {
+                setNotificationMessage(null)
+                setErrorOrSuccess(null)
+            }, 5000)
+          })
       }
 
       else {console.log('----> no')}
@@ -97,11 +108,16 @@ const App = () => {
                     setErrorOrSuccess(null)
                 }, 5000)
             })
-// Olemattoman henkilön poistaminen tapahtuu siis metodilla filter,
-// joka muodostaa uuden taulukon, jonka sisällöksi tulee alkuperäisen taulukon sisällöstä ne alkiot,
-// joille parametrina oleva funktio palauttaa arvon true:
+// Lisäyksen validator error
             .catch(error => {
-              console.log(error.response.data)
+              setNotificationMessage(
+                `Error ${error.response.data.error}`
+                )
+                setErrorOrSuccess(true)
+                setTimeout(() => {
+                  setNotificationMessage(null)
+                  setErrorOrSuccess(null)
+              }, 5000)
             })
       }
   }
